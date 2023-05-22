@@ -1,0 +1,16 @@
+<h1>Meet our team</h1>
+
+<form action="/contact" method="get">
+  <div class="d-flex w-25 mb-2">
+    <input type="text" name="member" value="<%= params[:member] %>" class="form-control" placeholder="Who are you looking for?">
+    <input type="submit" class="btn btn-primary">
+  </div>
+</form>
+
+<ol class="list-group w-25">
+  <% @members.each do |member| %>
+    <li class="list-group-item"><%= member.capitalize %></li>
+  <% end %>
+</ol>
+
+<%= link_to "Back to home", root_path, class: "btn btn-secondary mt-2" %>
